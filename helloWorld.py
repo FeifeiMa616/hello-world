@@ -3,6 +3,7 @@
 # @Author  : FayeMa
 # @File    : helloWorld.py
 import time
+from time import sleep
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -14,7 +15,11 @@ class Baidu:
     def helloworld(self):
         self.driver.get("https://www.baidu.com/")
         time.sleep(1)
-        self.driver.quit()
+        input_text=self.driver.find_element(By.ID,'chat-textarea')
+        input_text.send_keys('Hello World')
+        sleep(10)
+
+
 
 
 
